@@ -16,7 +16,7 @@
   <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card p-4 shadow" style="max-width: 400px;">
       <h2 class="text-center mb-4">Login</h2>
-      <form id="loginForm" class="needs-validation"  novalidate>
+      <form id="loginForm" class="needs-validation method-post"  novalidate>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
           <input type="email" class="form-control" name="email" placeholder="name@example.com" required>
@@ -39,36 +39,7 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
-<script>
-
-$(document).ready(function()
-{
-    $("#loginButton").on("click", function() {
-        $.ajax({
-            url: "http://localhost:8080/login",
-            type: "POST",
-            contentType: "application/json",
-            dataType: "json",
-            headers: {
-                "Accept": "application/json"
-            },
-            data: JSON.stringify({
-                username: $("#username").val(),
-                password: $("#password").val()
-            }),
-            success: function(response) {
-                console.log("Success:", response);
-            },
-            error: function(xhr, status, error) {
-                console.error("Error:", status, error);
-            }
-        });
-    });
-});
-
-</script>
+  <script src="{{ asset('js/forms.js') }}"></script>
 
 </body>
-
 </html>

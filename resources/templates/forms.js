@@ -147,6 +147,6 @@ $(document).ready(function(){
                     }
                     $form.find('button[type="submit"]').prop('disabled', false).html('Enviar novamente');
                 }
-            }
+            });
         });
     });
