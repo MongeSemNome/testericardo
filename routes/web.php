@@ -7,12 +7,13 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
-
+ Route::get('/login2', [LoginController::class, 'index']);
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest')
