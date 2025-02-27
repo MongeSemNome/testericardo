@@ -72,7 +72,7 @@ $(document).ready(function(){
                         window.location.reload();
                     });
                 },
-                
+
                 403: function(response) {
                     Swal.fire('Acesso negado!', 'Você não tem permissão para realizar esta ação.', 'warning');
                 },
@@ -94,15 +94,15 @@ $(document).ready(function(){
                           $.each(response.responseJSON.errors, function(input, messages) {
                               var input = $form.find('[name="' + input + '"]');
                               var errorMessages = '';
-    
+
                               $.each(messages, function(input, message) {
                                   errorMessages += message + '<br>';
                               });
-    
+
                               $form.validate().showErrors({
                                   [input]: errorMessages
                               });
-    
+
                             });
                         }
                         $form.find('button[type="submit"]').prop('disabled', false).html('Enviar novamente');
@@ -147,8 +147,6 @@ $(document).ready(function(){
                     }
                     $form.find('button[type="submit"]').prop('disabled', false).html('Enviar novamente');
                 }
-            },
+            }
         });
     });
-});
-
